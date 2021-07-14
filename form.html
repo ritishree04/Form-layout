@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>registrationForm</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1 class="text-success text-center">Registration Form</h1>
+            <div class="col-lg-8 m-auto d-block" >
+                <form action="result.html" onsubmit="return validation()" class="bg-light" method="POST">
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input type="text" name="user" class="form-control" id="user">
+                    <span id="username" class="text-danger font-weight-bold"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label>email: </label>
+                    <input type="text" name="em" class="form-control" id="em">
+                    <span id="mail" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>mobile: </label>
+                    <input type="text" name="mob" class="form-control" id="mob">
+                    <span id="no" class="text-danger font-weight-bold"></span>
+                </div>
+                <br/>
+                <div>
+                    <label>Country :</label>
+                    <select name="country">
+                        <option value="sel">select</option>
+                        <option value="india">INDIA</option>
+                        <option value="pakistan">pakistan</option>
+                        <option value="nepal">nepal</option>
+                    </select>
+
+                </div>
+                <br/>
+
+                <div>
+                    <label>Gender :</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label> 
+                    <input type="radio" id="female" name="gender" value="female"
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="female"
+                    <label for="female">other</label>
+                    
+                    
+                    <br/>
+                </div>
+                    <br/><br/>
+
+                    <div>
+                        <label>Education :</label>
+                        <input type="radio" id="MCA" name="QUALI" value="MAC">
+                        <label for="MCA">MCA</label> 
+                        <input type="radio" id="BCA" name="QUALI" value="BCA"
+                        <label for="BCA">BCA</label>
+                        <input type="radio" id="Btech" name="QUALI" value="Btech"
+                        <label for="Btech">Btech</label>
+
+                        <br/>
+                    </div>
+                        <br/><br/>
+
+                <div>
+                    <input type="file" >
+                </div>
+                <br/>
+                <br/>
+
+                <input type="submit" nme="submit" value="submit" class="btn btn-danger">
+
+        </form>
+            </div>
+                 </div>
+
+        <script type="text/javascript">
+
+            function validation(){
+
+                var user= document.getElementById('user').value;
+                var em = document.getElementById('em').value;
+                var mob= document.getElementById('mob').value;
+                
+                
+
+                if(user == ""){
+                    document.getElementById('username').innerHTML="***plz enter your name";
+                    return false;
+                }
+
+                if((user.length<=2)||(user.lenth>20)){
+                    document.getElementById('username').innerHTML="**user length must be btween 2 to 20";
+                    return false;
+
+                }
+                if(!isNAN(user)){
+                    document.getElementById('username').innerHTML="**only character are allow";
+                    return false;
+                }
+
+
+                if(em == ""){
+                    document.getElementById('mail').innerHTML="***plz enter your email";
+                    return false;
+                }
+                
+                if(em.indexOf('@')<=0){
+                    document.getElementById('mail').innerHTML="**invalid @ position";
+                }
+
+
+
+
+                if(mob == ""){
+                    document.getElementById('no').innerHTML="***plz enter your number";
+                    return false;
+                }
+
+                if(isNAN(mob)){
+                    document.getElementById('no').innerHTML="**only number are allow";
+                    return false;
+                }
+            
+            }
+
+
+
+
+
+
+
+
+
+</script>
+            
+    </body>
+    </form>
